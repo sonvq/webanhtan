@@ -1,0 +1,200 @@
+@media (max-width: 1200px) {
+    .woocommerce table.shop_table_responsive tbody th,.woocommerce table.shop_table_responsive thead,.woocommerce-page table.shop_table_responsive tbody th,.woocommerce-page table.shop_table_responsive thead {
+        display: none;
+    }
+
+    .woocommerce table.shop_table_responsive tbody tr:first-child td:first-child,.woocommerce-page table.shop_table_responsive tbody tr:first-child td:first-child {
+        border-top: 0;
+    }
+
+    .woocommerce table.shop_table_responsive tr,.woocommerce table.shop_table_responsive tr td,.woocommerce-page table.shop_table_responsive tr,.woocommerce-page table.shop_table_responsive tr td {
+        display: block;
+    }
+
+    .woocommerce #content table.cart .product-thumbnail,.woocommerce table.cart .product-thumbnail,.woocommerce table.my_account_orders tr td.order-actions:before,.woocommerce-page #content table.cart .product-thumbnail,.woocommerce-page table.cart .product-thumbnail,.woocommerce-page table.my_account_orders tr td.order-actions:before {
+        display: none;
+    }
+
+    .woocommerce table.shop_table_responsive tr td:before,.woocommerce-page table.shop_table_responsive tr td:before {
+        content: attr(data-title) ": ";
+        font-weight: 700;
+    }
+
+    .woocommerce table.shop_table_responsive tr:nth-child(2n) td,.woocommerce-page table.shop_table_responsive tr:nth-child(2n) td {
+        background-color: rgba(0,0,0,.025);
+    }
+
+    .woocommerce table.my_account_orders tr td.order-actions,.woocommerce-page table.my_account_orders tr td.order-actions {
+        text-align: left;
+    }
+
+    .woocommerce table.my_account_orders tr td.order-actions .button,.woocommerce-page table.my_account_orders tr td.order-actions .button {
+        float: none;
+        margin: .125em .25em .125em 0;
+    }
+
+    .woocommerce .col2-set .col-1,.woocommerce .col2-set .col-2,.woocommerce-page .col2-set .col-1,.woocommerce-page .col2-set .col-2 {
+        float: none;
+        width: 100%;
+    }
+
+
+    .woocommerce #content div.product div.images,.woocommerce #content div.product div.summary,.woocommerce div.product div.images,.woocommerce div.product div.summary,.woocommerce-page #content div.product div.images,.woocommerce-page #content div.product div.summary,.woocommerce-page div.product div.images,.woocommerce-page div.product div.summary {
+        float: none;
+        width: 100%;
+    }
+
+    .woocommerce #content table.cart td.actions,.woocommerce table.cart td.actions,.woocommerce-page #content table.cart td.actions,.woocommerce-page table.cart td.actions {
+        text-align: left;
+    }
+
+    .woocommerce .cart .actions input[type="submit"].button {
+        float: right;
+    }
+
+    .woocommerce #content table.cart td.actions .coupon:after,.woocommerce #content table.cart td.actions .coupon:before,.woocommerce table.cart td.actions .coupon:after,.woocommerce table.cart td.actions .coupon:before,.woocommerce-page #content table.cart td.actions .coupon:after,.woocommerce-page #content table.cart td.actions .coupon:before,.woocommerce-page table.cart td.actions .coupon:after,.woocommerce-page table.cart td.actions .coupon:before {
+        content: " ";
+        display: table;
+    }
+
+    .woocommerce #content table.cart td.actions .coupon:after,.woocommerce table.cart td.actions .coupon:after,.woocommerce-page #content table.cart td.actions .coupon:after,.woocommerce-page table.cart td.actions .coupon:after {
+        clear: both;
+    }
+
+    .woocommerce #content table.cart td.actions .button.alt,.woocommerce #content table.cart td.actions .input-text+.button,.woocommerce table.cart td.actions .button.alt,.woocommerce table.cart td.actions .input-text+.button,.woocommerce-page #content table.cart td.actions .button.alt,.woocommerce-page #content table.cart td.actions .input-text+.button,.woocommerce-page table.cart td.actions .button.alt,.woocommerce-page table.cart td.actions .input-text+.button {
+        float: left;
+    }
+
+    .woocommerce .cart-collaterals .cart_totals,.woocommerce .cart-collaterals .cross-sells,.woocommerce .cart-collaterals .shipping_calculator,.woocommerce-page .cart-collaterals .cart_totals,.woocommerce-page .cart-collaterals .cross-sells,.woocommerce-page .cart-collaterals .shipping_calculator {
+        width: 100%;
+        float: none;
+        text-align: left;
+    }
+
+    .woocommerce-page.woocommerce-checkout form.login .form-row,.woocommerce.woocommerce-checkout form.login .form-row {
+        width: 100%;
+        float: none;
+    }
+
+    .woocommerce #payment .terms,.woocommerce-page #payment .terms {
+        text-align: left;
+        padding: 0;
+    }
+
+    .woocommerce #payment #place_order,.woocommerce-page #payment #place_order {
+        float: none;
+        width: 100%;
+        box-sizing: border-box;
+        margin-bottom: 1em;
+    }
+
+    .woocommerce .lost_reset_password .form-row-first,.woocommerce .lost_reset_password .form-row-last,.woocommerce-page .lost_reset_password .form-row-first,.woocommerce-page .lost_reset_password .form-row-last {
+        width: 100%;
+        float: none;
+        margin-right: 0;
+    }
+
+    .single-product .twentythirteen .panel {
+        padding-left: 20px!important;
+        padding-right: 20px!important;
+    }
+}
+
+
+@media (max-width: 620px) {
+
+    .woocommerce #content table.cart td.actions .button.alt,.woocommerce #content table.cart td.actions .input-text+.button,.woocommerce table.cart td.actions .button.alt,.woocommerce table.cart td.actions .input-text+.button,.woocommerce-page #content table.cart td.actions .button.alt,.woocommerce-page #content table.cart td.actions .input-text+.button,.woocommerce-page table.cart td.actions .button.alt,.woocommerce-page table.cart td.actions .input-text+.button {
+        float: none;
+    }
+
+    .woocommerce .cart .actions input[type="submit"].button {
+        float: none;
+    }
+
+    .woocommerce form .form-row-first, .woocommerce form .form-row-last, .woocommerce-page form .form-row-first, .woocommerce-page form .form-row-last {
+        float: none;
+        width: auto;
+    }
+
+	.woocommerce p.lost_password {
+		float: none;
+		margin: 1em 0 0;
+		clear: left;
+	}
+
+	.woocommerce p.form-row:not(.form-row-wide) {
+		float: none;
+	}
+
+	.woocommerce .woocommerce-ordering, .woocommerce-page .woocommerce-ordering {
+		float: none;
+		margin: 0.75em 0 0;
+	}
+
+	.woocommerce .woocommerce-ordering .fancy-select {
+		width: auto;
+        margin: 0 0 $(pagePadding)px;
+	}
+
+	.woocommerce .woocommerce-result-count, .woocommerce-page .woocommerce-result-count {
+		float: none;
+		margin: 0;
+	}
+
+	.woocommerce #content table.cart td.actions .coupon, .woocommerce table.cart td.actions .coupon, .woocommerce-page #content table.cart td.actions .coupon, .woocommerce-page table.cart td.actions .coupon {
+		float: none;
+		margin: 0 0 1em;
+	}
+
+    .woocommerce .commentTxt .star-rating {
+        margin: 4px 0 8px 0;
+        clear: right;
+    }
+
+}
+
+@media (max-width: 560px) {
+
+    .woocommerce .cart .actions input[name="update_cart"].button {
+        float: left;
+        clear: left;
+    }
+
+    .woocommerce #content table.cart td.actions .coupon label, .woocommerce table.cart td.actions .coupon label, .woocommerce-page #content table.cart td.actions .coupon label, .woocommerce-page table.cart td.actions .coupon label {
+        margin: 0 0 0.7em;
+        float: none;
+        display: block;
+    }
+
+    .woocommerce > form {
+        display: block;
+        position: relative;
+        overflow-x: auto;
+        max-width: 100%;
+        margin: 0 0 1em;
+    }
+
+    .woocommerce table.shop_table {
+        margin: 0 0 5px;
+    }
+
+}
+
+@media (max-width: 480px) {
+
+    form.login p.form-row-wide {
+        width: auto;
+        float: none;
+        clear: none;
+    }
+
+    form.login p.form-row-wide:after, form.login p.form-row-wide:before {
+        display: none;
+        clear: none;
+    }
+
+    form.login p.form-row-wide:nth-child(odd), form.login p.form-row-wide:nth-child(even) {
+        padding: 0;
+    }
+
+}

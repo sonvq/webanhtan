@@ -1,0 +1,32 @@
+Version 1.0
+i)   Intial version Release
+
+Version 1.1
+i)   Security, Translation, Read Me all done as per reviewer report.
+
+Version 1.2
+i)   Changes made to content.php, header.php, and content-single.php for security and escape data as reported by reviewer. 
+ii)  Removed default copyright and escaped customizer.php color output
+iii) Added resource licenses in readme.txt
+iv)  Resolved menu css issue.
+
+Version 1.3
+i)   Solved escape issue as reported by reviewer
+
+Version 1.4
+i)   Solved theme check warning.
+ii)  Solved escape and translation issue.
+
+Version 1.5
+i)   Solved theme check warning.
+ii)  Resolved issue as reported by reviewer.
+
+Version 1.6
+i)   Image Dimenssions and Featured image setup explained within customizer.
+
+Version 1.7
+i)   Configure add logo option.
+ii)  All Default Widgets Formated Properly.
+iii) Add Slider & Home Boxes Hide Functionality.
+iv)  Add About Theme Page.
+v)   Making Home Four Boxes Color Manageable. 

@@ -1,0 +1,354 @@
+/* Grid elements base */
+
+.gutter .port {
+    max-width: math(1200 - 2*$(pagePadding), px);
+	margin: auto;
+}
+
+.port {
+
+}
+
+.boldCell {
+	
+}
+
+/* Divider */
+
+.btDivider {
+	border-bottom: 1px solid $(lightBorderColor);
+}
+
+/* Row and column */
+
+.boldRow {
+    display: block;
+	margin: 0 -$(innerHorizontalPadding)px;
+}
+
+.rowItem {
+    padding: 0 $(innerHorizontalPadding)px;
+}
+
+.rowItemContent {
+	position: relative;
+}
+
+.btDoubleRowPadding {
+	.boldRow {
+		display: block;
+		margin: 0 -math( 2*$(innerHorizontalPadding), px );
+	}
+
+	.rowItem {
+		padding: 0 math( 2*$(innerHorizontalPadding), px );
+	}	
+}
+
+
+/* Table cells layout */
+
+@media (min-width: 992px) {
+
+	.boldRowInner.btTableRow {
+		display: table;
+		width: 100%;
+		padding: 0 15px;
+		table-layout: fixed;
+	}
+
+	.boldRowInner.btTableRow > .rowItem {
+		display: table-cell;
+		float: none;
+	}
+
+	.btTopVertical {
+		vertical-align: top;
+	}
+
+	.btMiddleVertical {
+		vertical-align: middle;
+	}
+
+	.btBottomVertical {
+		vertical-align: bottom;
+	}
+
+
+}
+/* Vertical align should be removed om small screens. Otherwise it won't break into the new row */
+
+/* /Table cells layout */
+
+@media (min-width: 768px) {
+
+    .boldRow.btTableRow {
+        display: table;
+		table-layout: fixed;
+		width: 101%;
+		margin: 0;
+    }
+
+	.wVariable .boldRow.btTableRow {
+		margin: 0;
+		width: 100%;
+	}
+
+	.wVariable .boldRow.btTableRow > .rowItem {
+		padding: 0;
+	}
+	
+	.btHalfPage .boldRow.btTableRow {
+		width: 100%;
+	}
+
+    .boldRow.btTableRow .rowItem {
+        float: none;
+		height: 100%;
+        display: table-cell;
+
+    }
+
+    .boldRow.btTableRow .rowItem.btMiddleVertical {
+        vertical-align: middle;
+    }
+
+    .boldRow.btTableRow .rowItem.btBottomVertical {
+        vertical-align: bottom;
+    }
+
+	/* Cell border, removed on c */
+
+	.rowItem.btLeftBorder {
+		border-left: 1px solid $(lightBorderColor);
+	}
+
+	.rowItem.btLeftBorder {
+		border-left: 1px solid $(lightBorderColor);
+	}
+
+	.rowItem.btRightBorder {
+		border-right: 1px solid $(lightBorderColor);
+	}
+
+	:darkSkinSelector .rowItem.btRightBorder {
+		border-right: 1px solid $(darkBorderColor);
+	}
+
+	:darkSkinSelector .rowItem.btLeftBorder {
+		border-left: 1px solid $(darkBorderColor);
+	}
+}
+
+/* Grid elements spacing */
+
+.topExtraSmallSpaced {
+    padding-top:  math($(innerVerticalPadding)/4, px);
+}
+
+.topSmallSpaced {
+    padding-top: $(innerVerticalPadding)px;
+}
+
+.topSemiSpaced {
+    padding-top: math(2*$(innerVerticalPadding), px);
+}
+
+.topSpaced {
+    padding-top: math(4*$(innerVerticalPadding), px);
+}
+
+.topExtraSpaced {
+    padding-top: math(8*$(innerVerticalPadding), px);
+}
+
+.topExtraExtraSpaced {
+    padding-top: math(12*$(innerVerticalPadding), px);
+}
+
+.bottomExtraSmallSpaced {
+    padding-bottom:  math($(innerVerticalPadding)/4, px);
+}
+
+.bottomSmallSpaced {
+    padding-bottom: $(innerVerticalPadding)px;
+}
+ 
+.bottomSemiSpaced {
+    padding-bottom: math(2*$(innerVerticalPadding), px);
+}
+
+.bottomSpaced {
+    padding-bottom: math(4*$(innerVerticalPadding), px);
+}
+
+.bottomExtraSpaced {
+    padding-bottom: math(8*$(innerVerticalPadding), px);
+}
+
+/* Horizontal padding */
+
+.rowItem.btDoublePadding > .rowItemContent {
+    padding: 0 math(2*$(innerHorizontalPadding), px);
+}
+
+.rowItem.btNoPadding {
+    padding: 0;
+}
+
+.rowItem.btNoPadding {
+    padding: 0;
+}
+
+/* Text indent */
+.btTextIndent > .rowItemContent {
+	padding: 0 $(innerHorizontalPadding)px;
+}
+
+.btTextIndent > .rowItemContent :any(.btImage, .bpgPhoto) {
+	margin: 0 -$(innerHorizontalPadding)px;
+}
+
+/* Highlighted section */
+
+:lightSkinSelector .btHighlight > .rowItemContent {
+	border: 1px solid $(lightBorderColor);
+	border-bottom: 2px solid $(lightBorderColor);
+	background-color: $(lightBgSubColor);
+}
+
+:darkSkinSelector .btHighlight > .rowItemContent {
+	border: 1px solid $(darkBorderColor);
+	border-bottom: 2px solid $(darkBorderColor);
+	background-color: $(darkBgSubColor);
+}
+
+/* Helpers */
+
+.boldRow:after, .btClear:after {
+    content: " ";
+    display: table;
+    width: 100%;
+    clear: both;
+}
+
+.btClear {
+	clear: both;
+}
+
+.btTextLeft {
+	text-align: left;
+}
+
+.btTextRight {
+	text-align: right;
+}
+
+.btTextCenter {
+	text-align: center;
+}
+
+.fullScreenHeight {
+	height: 100vh;
+	.port {
+		height: 100%;
+		width: 100%;
+		display: table;
+		table-layout: fixed;
+	}
+	.boldCell {
+		height: 100%;
+		width: 100%;
+		display: table-cell;
+	}
+	.boldCellInner {
+		display: block;
+	}
+}
+
+.btMiddleVertical .boldCell {
+	vertical-align: middle;
+}
+
+.btBottomVertical .boldCell {
+	vertical-align: bottom;
+}
+
+.btGhost {
+	position: fixed;
+	left: 0;
+	top: 0;
+	right: 0;
+	bottom: 0;
+	transition: all 1s ease-in-out-back;
+}
+
+.btGhost.btRemoveGhost {
+	transform: translateY(-100%) scale(0.7);
+	opacity: 0;
+}
+
+.wBackground {
+    background-color: transparent;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: scroll;
+}
+
+.wBackground.cover {
+    background-size: cover;
+}
+
+.wBackground.contain {
+    background-size: contain;
+}
+
+/* Animated elements */
+
+.btParallax, .bt_parallax {
+	transition-property: background-position;
+	transition-duration: 0ms;
+	transition-delay: 0ms;
+	background-attachment: fixed;
+}
+
+.animate {
+	transition: all 1000ms ease-out-expo 200ms;
+}
+
+.animate-fadein {
+	opacity: 0;
+	transform: scale(0.98);
+}
+
+.touch .animate-fadein {
+	opacity: 1;
+}
+
+.animate-moveleft {
+	transform: translateX(100px);
+}
+
+.animate-moveright {
+	transform: translateX(-100px);
+}
+
+.animate-moveup {
+	transform: translateY(100px);
+}
+
+.animate-movedown {
+	transform: translateY(-100px);
+}
+
+.animated {
+  opacity: 1;
+  transform: translateY(0px) scale(1);
+  transition: all 1s ease-out-expo 200ms;
+}
+
+@for i in range(0, 11) {
+	body:not(.btHalfPage) .rowItem:nth-child(#(i)) {
+		transition-delay: math(#(i)*200, ms);
+	}
+}

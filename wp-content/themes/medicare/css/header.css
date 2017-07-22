@@ -1,0 +1,1811 @@
+/* Header */
+
+.mainHeader  {
+	width: 100%;
+	position: absolute;
+	background-color: inherit;
+	transform: translateY(0);
+	:any(.port, .topBarPort) {
+		padding: 0 $(pagePadding)px;
+	}
+}
+
+.mainHeader:not(.btBelowMenu .mainHeader) {
+	box-shadow: 0 1px 3px 0 rgba(0,0,0,0.1);
+}
+
+.mainHeader.btDarkSkin, .btLightSkin .mainHeader.btDarkSkin {
+	background-color: $(darkBgColor);
+}
+.mainHeader.btLightSkin, .btDarkSkin .mainHeader.btLightSkin {
+	background-color: $(lightBgColor);
+}
+
+.btMenuGutter .mainHeader :any(.port, .topBarPort) {
+    max-width: math(1200 - 2*$(pagePadding), px);
+	margin: auto;
+	padding: 0;
+}
+
+/* Below menu */
+
+.btBelowMenu:not(.btStickyHeaderActive) .mainHeader {
+	background-color: transparent;
+}
+
+:any(.topTools,.btIconWidget) {
+	.btIco .btIcoHolder em, .btIconWidgetTitle, .btIconWidgetText {
+		/*color: #fff !important;*/
+	}
+
+	.btIconWidgetIcon:hover .btIco .btIcoHolder em {
+		color: $(accentColor) !important;
+	}
+}
+
+:darkSkinSelector.btBelowMenu:not(.btStickyHeaderActive) .menuHolder .menuPort ul li a, :lightSkinSelector.btBelowMenu:not(.btStickyHeaderActive)  .menuHolder .menuPort ul li a {
+	color: #fff;
+}
+
+
+:darkSkinSelector.btBelowMenu:not(.btStickyHeaderActive) :any(.menuPort:before, .menuPort:after), :lightSkinSelector.btBelowMenu:not(.btStickyHeaderActive) :any(.menuPort:before, .menuPort:after) {
+	background-color: rgba(255,255,255,0.1) !important;
+}
+
+/* Main menu */
+
+.menuHolder {
+    position: relative;
+	padding: 23px 0 0;
+}
+
+.btMenuBelowLogo .menuHolder {
+	padding: 18px 0 0;
+}
+
+.btMenuHorizontal.btMenuCenter .menuHolder {
+	padding: 15px 0;
+}
+
+.btMenuHorizontal.btMenuCenter.btTopToolsInMenuArea .menuHolder {
+	padding: 20px 0 0;
+}
+
+.btMenuHorizontal.btMenuCenter.btTopToolsInMenuArea .menuHolder .logo {
+	padding: 0 0 20px;
+}
+
+.menuPort {
+	font-family: $(menuFont);
+	visibility: hidden;
+	text-transform: uppercase;
+	font-size: 14px;
+	margin: 0;
+    /*
+	.btTopToolsInMenuArea & {
+		clear: left;
+		position: relative;
+	}*/
+	nav ul {
+		list-style: none;
+		display: block;
+		margin: 0;
+		padding: 0;
+		transition: all 360ms ease 0s;
+		li {
+			display: block;
+			margin: 0;
+			padding: 0;
+			position: relative;
+			a {
+				display: block;
+				position: relative;
+				text-transform: uppercase;
+				font-weight: 700;
+			}
+		}
+		li a:hover {
+			color: $(accentColor) !important;
+		}
+	}
+
+	nav ul ul {
+		padding: 0;
+	}
+
+	nav > ul > li > a {
+		padding: 0;
+	}
+
+	nav > ul > li {
+		line-height: $(logoHeight)px;
+	}
+
+	nav > ul > li.menu-item-has-children > a:before {
+		content: ' ';
+		position: absolute;
+		left: 50%;
+		bottom: 0;
+		width: 0;
+		height: 0;
+		margin: 0 0 0 -6px;
+		border-left: 6px solid transparent;
+		border-right: 6px solid transparent;
+		border-bottom: 6px solid $(accentColor);
+		opacity: 0;
+		transition: all 360ms ease;
+	}
+
+	nav > ul > li.menu-item-has-children.on > a:before {
+		opacity: 1;
+	}
+
+	nav ul ul li {
+		font-size: 13px;
+		line-height: 1.25;
+	}	
+	
+	nav ul ul li a {
+		padding: 7px 10px 7px 27px;
+		text-transform: none;
+		font-weight: 400;
+	}
+
+	nav ul ul li:first-child a {
+		padding: 16px 10px 7px 27px;
+	}
+
+	nav ul ul li:last-child a {
+		padding: 7px 10px 16px 27px;
+	}
+
+}
+
+/*.btMenuBelowLogo .menuPort nav > ul > li > a {*/
+	/*line-height: 43px;*/
+/*}*/
+
+body.btMenuVertical .menuPort nav > ul > li.menu-item-has-children > a:before {
+	display: none;
+}
+
+.btMenuBelowLogo .menuPort {
+	clear: left;
+	position: relative;
+}
+
+.btMenuBelowLogo .menuPort:before, .btMenuBelowLogo .menuPort:after,
+.btMenuHorizontal.btMenuCenter.btTopToolsInMenuArea .menuPort nav.leftNav:before,
+.btMenuHorizontal.btMenuCenter.btTopToolsInMenuArea .menuPort nav.leftNav:after {
+	content: ' ';
+	display: block;
+	position: absolute;
+	width: 3000px;
+	height: 1px;
+	top: 0;
+	background-color: $(lightBorderColor);
+}
+
+:darkSkinSelector :any(.menuPort:before, .menuPort:after) {
+	background-color: $(darkBorderColor);
+}
+
+.btMenuBelowLogo .menuPort:before,
+.btMenuHorizontal.btMenuCenter.btTopToolsInMenuArea .menuPort nav.leftNav:before {
+	right: 50%;
+	margin: 0 0 0 -100%;
+}
+
+.btMenuBelowLogo .menuPort:after,
+.btMenuHorizontal.btMenuCenter.btTopToolsInMenuArea .menuPort nav.leftNav:after {
+	left: 50%;
+	margin: 0 -100% 0 0;
+}
+
+.btTopToolsInMenuArea.btMenuCenter.btMenuHorizontal :any(.menuPort nav.leftNav:before, .menuPort nav.leftNav:after) {
+	display: none;
+}
+
+/* Only horizontal menu */
+
+.btMenuHorizontal .menuPort {
+
+	nav > ul > :any(li.current-menu-ancestor, li.current-menu-item) > a {
+		box-shadow: 0 -3px 0 0 $(accentColor) inset;
+	}
+
+	nav > ul > li > ul :any(li.current-menu-ancestor, li.current-menu-item) > a {
+		color: $(accentColor) !important;
+	}
+
+	nav ul ul li a:before {
+		content: '\f105';
+		display: block;
+		float: left;
+		margin: 2px 0 0 -12px;
+		font: normal 13px/1 FontAwesome;
+		text-overflow: ellipsis;
+	}
+
+	nav ul ul li.btEmptyElement a:before {
+		display: none;
+	}
+
+}
+
+.btMenuHorizontal.btMenuRight .menuPort {
+
+	nav ul ul li a {
+		padding: 7px 27px 7px 10px;
+	}
+
+	nav ul ul li a:before {
+		content: '\f104';
+		float: right;
+		margin: 1px -12px 0 0;
+	}
+
+	nav ul ul li:first-child a {
+		padding: 16px 27px 7px 10px;
+	}
+
+	nav ul ul li:last-child a {
+		padding: 7px 27px 16px 10px;
+	}
+
+}
+
+/*
+.btMenuHorizontal.btMenuCenter.btTopToolsInMenuArea .menuPort :any(nav.leftNav,nav.rightNav) {
+	clear: left;
+	position: relative;
+	left: auto;
+	right: auto;
+	float: left;
+	width: 50%;
+}
+
+.btMenuHorizontal.btMenuCenter.btTopToolsInMenuArea .menuPort nav.rightNav {
+	clear: none;
+}
+
+.btMenuHorizontal.btMenuCenter.btTopToolsInMenuArea .menuPort :any(nav.leftNav,nav.rightNav) ul {
+	display: block;
+	margin: 0 auto;
+	line-height: 0;
+}
+
+.btMenuHorizontal.btMenuCenter.btTopToolsInMenuArea .menuPort nav.leftNav ul {
+	float: right;
+}
+
+.btMenuHorizontal.btMenuCenter.btTopToolsInMenuArea .menuPort nav.rightNav ul {
+	float: left;
+}
+*/
+/* Skins */
+
+:darkSkinSelector .menuHolder .menuPort {
+	 ul li a {
+		color: $(darkFontColor);
+	}
+	ul ul li {
+		background-color: /*$(darkBgColor)*/ #3a3c42;
+	}
+
+	ul ul li:last-child {
+		border-bottom: none;
+	}
+
+	nav ul ul li a:before {
+		color: a-adjust( $(darkFontColor) -50);
+	}
+}
+
+:lightSkinSelector .menuHolder .menuPort {
+	 ul li a {
+		color: $(lightFontColor);
+	}
+	ul ul li {
+		background-color: /*$(lightBgColor)*/ #f1f1f1;
+	}
+	ul ul li:last-child {
+		border-bottom: none;
+	}
+	nav ul ul li a:before {
+		color: a-adjust( $(lightFontColor) -50);
+	}
+}
+
+:any(.btDarkSkin .menuHolder, .menuHolder.btDarkSkin) ul li a {
+	color: $(darkFontColor);
+}
+
+:any(.btLightSkin .menuHolder, .menuHolder.btLightSkin)  ul li a {
+	color: $(lightFontColor);
+}
+
+/* Logo and triggers */
+
+.btTextLogo {
+	font-family: $(logoFont);
+	font-size: 36px;
+	font-weight: 800;
+	line-height: $(logoHeight)px;
+	letter-spacing: -1px;
+}
+
+.menuHolder {
+	.logo {
+		line-height: 0;
+		margin: 0 0 23px;
+		float: left;
+			img {
+			height: $(logoHeight)px;
+			width: auto;
+			display: block;
+		}
+		img.btAltLogo {
+			display: none;
+		}
+	}
+}
+
+.btHorizontalMenuTrigger {
+	display: none;
+	float: right;
+	line-height: $(logoHeight)px;
+	margin: 0 -8px 0 1em;
+}
+
+/* Top bar */
+
+.topBar {
+	font-size: 12px;
+	line-height: $(topBarHeight)px;
+}
+
+.btMenuVertical .topBar {
+	margin: 0 -40px;
+}
+
+.topBar:after, .topBar:before {
+	content: ' ';
+	height: 1px;
+	width: 2000px;
+	display: block;
+	position: absolute;
+}
+
+.btMenuVertical :any(.topBar:after, .topBar:before) {
+	display: none;
+}
+
+:lightSkinSelector :any(.topBar:after, .topBar:before) {
+	background-color: $(lightBorderColor);
+}
+
+:darkSkinSelector :any(.topBar:after, .topBar:before) {
+	background-color: $(darkBorderColor);
+}
+
+
+.btMenuHorizontal .topBarInMenu {
+	line-height: inherit;
+	float: right;
+	display: table;
+	height: $(logoHeight)px;
+	.topBarInMenuCell {
+		line-height: inherit;
+		display: table-cell;
+		vertical-align: middle;
+		white-space: nowrap;
+	}
+
+	.btIco span.btIconText {
+		display: none;
+	}
+}
+
+.btMenuHorizontal.btMenuBelowLogo .topBarInMenu {
+	margin: 0 0 0 20px;
+}
+
+.btMenuVertical {
+	nav :any(li.current-menu-ancestor, li.current-menu-item) > a {
+		color: $(accentColor) !important;
+	}
+	.topBarInMenu {
+		float: none;
+		display: block;
+		height: auto;
+		line-height: 0;
+		margin: 0 0 20px;
+		.topBarInMenuCell {
+			line-height: inherit;
+			display: block;
+			text-align: center;
+		}
+	}
+}
+
+:darkSkinSelector :any(.topBarInMenu:after, .topBar:before) {
+	background-color: $(darkBorderColor);
+}
+
+/* Responsive opcije */
+
+.subToggler {
+	display: none;
+	cursor: pointer;
+	position: absolute;
+	right: -18px;
+	top: 0;
+	width: 45px;
+	line-height: inherit;
+	z-index: 80;
+	padding: 0px 0 0;
+	text-align: center;
+}
+
+.menuHolder .menuPort ul ul .subToggler {
+	right: 0px;
+}
+
+.subToggler:before {
+	content: '\f107';
+	font-family: FontAwesome;
+	font-size: 16px;
+	color: $(accentColor);
+	line-height: inherit;
+}
+
+.on > .subToggler {
+	transform: rotateX(180deg);
+}
+
+.touch {
+	.menuPort nav > ul > li.menu-item-has-children {
+		padding-right: 15px;
+		> .subToggler {
+			display: block;
+		}
+	}
+	.menuPort nav > ul > li.menu-item-has-children:not(.btMenuWideDropdown) li.menu-item-has-children {
+		padding-right: 15px;
+		.subToggler {
+			display: block;
+
+		}
+	}
+	.btMenuHorizontal {
+		.menuPort nav > ul > li.menu-item-has-children:not(.btMenuWideDropdown) li.menu-item-has-children .subToggler {
+			top: 5px;
+		}
+		.menuPort nav > ul > li.menu-item-has-children:not(.btMenuWideDropdown) li.menu-item-has-children .subToggler:before {
+			content: '\f105';
+		}
+	}
+}
+
+/* Dropdown, no need for override on responsive */
+
+body.btMenuHorizontal {
+
+	.menuPort {
+		> nav > ul > li {
+			margin: 0 30px 0 0;
+		}
+
+		ul > li > ul
+		{
+			opacity: 0;
+		}
+
+		ul ul {
+			position: absolute;
+			width: $(dropdownWidth);
+			right: 0;
+			top: auto;
+			margin: -3px 0 0;
+			pointer-events: none;
+			li {
+				z-index: 4;
+				float: none;
+			}
+			li:first-child > a {
+				border-top: 3px solid $(accentColor);
+			}
+			ul {
+				display: block;
+				top: 0;
+				margin: -12px 0 0;
+				pointer-events: none;
+			}
+			li:last-child ul {
+				margin: -3px 0 0;
+			}
+		}
+
+		/*
+        ul li.current-menu-item ul,  ul li.current-menu-ancestor ul {
+			margin: -3px 0 0;
+		}*/
+
+		ul li {
+			float: left;
+			position: relative;
+			z-index: 5;
+		}
+		ul > li.on > ul {
+			opacity: 1;
+			pointer-events: auto;
+		}
+		ul > li.on > ul > li.on > ul {
+			opacity: 1;
+			pointer-events: auto;
+		}
+	}
+
+	.menuPort > nav > ul > li.btMenuWideDropdown {
+		/*position: static;*/
+		position: relative;
+	}
+
+	.menuPort > nav > ul > li.btMenuWideDropdown {
+		> ul {
+			  width: 1160px;
+			  position: fixed;
+			  left: 50% !important;
+			  margin: -3px 0 0 -580px;
+		}
+
+		> ul:after {
+			content: ' ';
+			display: table;
+			width: 100%;
+			clear: both;
+		  }
+
+  		> ul > li > ul {
+			  opacity: 0;
+			  pointer-events: none;
+			  width: auto;
+			  right: 0;
+		}
+		> ul > li, > ul > li:last-child {
+			  display: block;
+			  float: left;
+			  border: none;
+			  width: 25%;
+			  ul {
+				display: block;
+				top: auto;
+				right: 0;
+				left: auto;
+				margin: 0;
+			  	position: absolute;
+				li a, li:first-child a {
+					padding: 7px 10px 7px 27px;
+					display: block;
+					border-top: none;
+					overflow: hidden;
+					white-space: nowrap;
+					text-overflow: ellipsis;
+				}
+				li:first-child a {
+					margin-top: 0;
+				}
+				li:last-child a {
+					padding: 7px 10px 22px 27px;
+				}
+              }
+		}
+
+		> ul > li, > ul > li:last-child ul li a, > ul > li, > ul > li:last-child ul li:first-child a {
+			border-left: none;
+		}
+
+		ul li, ul li:hover {
+			opacity: 1;
+		}
+
+		> ul > li:before {
+		      content: ' ';
+		      display: block;
+		      position: absolute;
+			  width: 1px;
+			  top: 0;
+			  bottom: 1px;
+			  left: 0;
+		}
+
+		> ul > li:last-child:before {
+			display: none;
+		}
+
+		> ul > li > a, > ul > li:first-child > a {
+			border-top: 3px solid $(accentColor);
+			display: block;
+			color: $(lightHeadlineColor);
+			font-weight: 700;
+			font-size: 14px;
+			overflow: hidden;
+			white-space: nowrap;
+			text-overflow: ellipsis;
+			text-transform: uppercase;
+			padding: 22px 10px 12px 16px;
+		}
+
+		> ul > li > a:before {
+			display: none;
+		}
+
+        > ul > li > a:after {
+		  content: ' ';
+		  height: 2px;
+		  width: 28px;
+		  display: block;
+		  background-color: $(lightBorderColor);
+		  position: absolute;
+		  bottom: 2px;
+		  left: auto;
+		}
+
+		> ul > li:last-child {
+			border-left: none;
+		}
+	}
+
+	.menuPort > nav > ul > li.btMenuWideDropdown:hover > ul > li > ul {
+		opacity: 1;
+		pointer-events: auto;
+	}
+
+}
+
+
+body.btMenuHorizontal.btDarkSkin .menuPort > nav > ul > li.btMenuWideDropdown > ul > li > a,
+body.btMenuHorizontal.btDarkSkin .menuPort > nav > ul > li.btMenuWideDropdown > ul > li:first-child > a {
+	color: $(darkHeadlineColor);
+}
+
+body.btMenuHorizontal.btMenuRight {
+
+	.menuPort > nav > ul > li {
+		margin: 0 0 0 30px;
+	}
+
+	.menuPort > nav > ul > li.btMenuWideDropdown > ul > li > a:after {
+		right: 15px;
+		left: auto;
+	}
+
+	.menuPort > nav ul > li.btMenuWideDropdown ul li:last-child a {
+		padding: 22px 10px 12px 16px;
+	}
+
+	.menuPort > nav > ul > li.btMenuWideDropdown {
+		> ul > li, > ul > li:last-child {
+			 display: block;
+			 float: right;
+			 border: none;
+			 width: 25%;
+		ul {
+			right: 0;
+			left: 0;
+			li a, li:first-child a {
+				padding: 7px 27px 7px 10px;
+				display: block;
+				border-top: none;
+				border-right: 1px solid $(darkBorderColor);
+				border-left: none;
+				overflow: hidden;
+				white-space: nowrap;
+				text-overflow: ellipsis;
+			}
+			li:first-child a {
+				margin-top: 0;
+			}
+			li:last-child a {
+				padding: 7px 27px 22px 10px;
+			}
+		  }
+		}
+		> ul > li > a, > ul > li:first-child > a {
+			 padding: 22px 14px 12px 10px;
+		}
+	}
+}
+
+body.btMenuHorizontal.btTopToolsInMenuArea .menuPort > nav > ul > li > ul {
+	right: auto;
+	left: 0;
+}
+
+body.btMenuHorizontal.btTopToolsInMenuArea.btMenuRight .menuPort > nav > ul > li > ul {
+	right: 0;
+	left: auto;
+}
+
+body.btMenuHorizontal.btTopToolsInMenuArea.btMenuBelowLogo.btMenuRight .menuPort > nav > ul > li > ul {
+	right: 0;
+	left: auto;
+}
+
+body.btMenuHorizontal.btMenuLeft .menuPort {
+	margin: 0 0 0 60px;
+}
+
+body.btMenuHorizontal.btMenuLeft.btMenuBelowLogo .menuPort {
+	margin: 0;
+	float: none;
+}
+
+body.btMenuHorizontal.btMenuRight.btMenuBelowLogo .menuPort nav {
+	margin: 0;
+}
+
+body.btMenuHorizontal .menuPort > nav > ul > li {
+	margin: 0 30px 0 0;
+}
+
+body.btMenuHorizontal.btMenuCenter .menuPort > nav.rightNav > ul > li {
+	margin: 0 0 0 30px;
+}
+
+body.btLightSkin.btMenuHorizontal {
+
+	.btDarkSkin .menuPort > nav > ul > li.btMenuWideDropdown {
+		> ul > li:before {
+			background-color: $(darkBorderColor);
+		}
+
+		> ul > li > a {
+		  border-bottom: 1px solid $(darkBorderColor);
+		}
+
+		> ul > li, > ul > li:last-child {
+			ul {
+				li a, li:first-child a {
+					border-left: 1px solid $(darkBorderColor);
+				}
+			}
+		}
+	}
+
+}
+
+body.btDarkSkin.btMenuHorizontal {
+
+	.btLightSkin .menuPort > nav > ul > li.btMenuWideDropdown {
+		> ul > li:before {
+			  background-color: $(lightBorderColor);
+		  }
+
+		> ul > li > a {
+			  border-bottom: 1px solid $(lightBorderColor);
+		  }
+
+		> ul > li, > ul > li:last-child {
+			ul {
+				li a, li:first-child a {
+					border-left: 1px solid $(lightBorderColor);
+				}
+			}
+		}
+	}
+
+}
+
+
+body.btMenuLeft.btMenuHorizontal {
+
+		.menuPort > nav > ul > li.btMenuWideDropdown > ul > li {
+			float: left;
+			ul {
+				right: 0;
+				left: auto;
+			}
+		}
+
+		.menuPort > nav > ul > li.btMenuWideDropdown {
+			> ul > li, > ul > li:last-child {
+				 display: block;
+				 float: left;
+				 border: none;
+				ul {
+					right: 0;
+					left: 0;
+					li a, li:first-child a {
+						border-top: none;
+						border-left: none;
+					}
+				}
+			}
+
+			> ul > li:before {
+				  width: 1px;
+				  top: 0;
+				  bottom: 1px;
+				  left: auto;
+				  right: 0;
+			  }
+
+              > ul > li:last-child ul li a, > ul > li:last-child ul li:first-child a {
+					border-right: none;
+			  }
+
+			> ul > li:last-child {
+				  border-right: none;
+			}
+		}
+
+}
+
+
+/* Menu positions */
+
+.btMenuHorizontal.btMenuRight {
+	.menuPort nav {
+		float: right;
+	}
+	.menuPort ul ul {
+		text-align: right;
+		right: 0;
+		left: auto;
+	}
+	.menuPort ul ul ul {
+		left: -$(dropdownWidth);
+		right: auto;
+	}
+
+}
+
+.btTopToolsInMenuArea.btMenuHorizontal.btMenuRight .menuPort nav {
+	margin: 0 22px 0 0;
+}
+
+.btMenuHorizontal.btMenuLeft {
+	.menuPort ul ul {
+		right: auto;
+		left: 0;
+	}
+	.menuPort ul ul ul {
+		left: $(dropdownWidth);
+		right: auto;
+	}
+	.menuPort nav {
+		float: left;
+		margin: 0 0 0 30px;
+	}
+}
+
+.btMenuHorizontal.btMenuLeft.btMenuBelowLogo .menuPort nav {
+	margin: 0;
+}
+
+.btMenuHorizontal.btMenuCenter  {
+	.logo {
+		position: relative;
+		z-index: 8;
+		float: left;
+		margin: 0 0 0 50%;
+	}
+	.menuPort nav {
+		float: none;
+	}
+	.menuPort .leftNav {
+		position: absolute;
+		right: 50%;
+		left: auto;
+		padding: 0;
+		ul {
+			float: right;
+		}
+		ul ul {
+			right: auto;
+			left: 0;
+		}
+		 ul ul ul {
+			left: $(dropdownWidth);
+			right: auto;
+		}
+	}
+	.menuPort .rightNav {
+		position: absolute;
+		left: 50%;
+		right: auto;
+		ul ul ul {
+			right: $(dropdownWidth);
+			left: auto;
+		}
+		li {
+			text-align: right;
+		}
+	}
+
+	.menuPort > nav > ul > li.btMenuWideDropdown > ul > li ul, .menuPort > nav > ul > li.btMenuWideDropdown > ul > li:last-child ul {
+		right: 0;
+		left: 0;
+	}
+
+}
+
+.btMenuHorizontal.btMenuCenter.btTopToolsInMenuArea .menuPort .rightNav li {
+	text-align: left;
+}
+
+/*
+.btMenuHorizontal.btMenuCenter.btTopToolsInMenuArea :any(.menuPort .leftNav,.menuPort .rightNav) {
+	margin: 0 !important;
+	position: static;
+}
+*/
+
+/*
+body.btMenuHorizontal.btMenuCenter.btTopToolsInMenuArea :any(.menuPort .leftNav,.menuPort .rightNav) > ul > li {
+	margin: 0 15px;
+}*/
+
+.btMenuHorizontal.btMenuCenter.btTopToolsInMenuArea :any(.menuPort .leftNav ul,.menuPort .rightNav ul) {
+	float: none;
+}
+
+/* Sticky */
+body.btMenuHorizontal.btStickyHeaderActive .mainHeader {
+	position: fixed;
+	box-shadow: 0 1px 3px rgba(0,0,0,.16);
+	transform: translateY(-100%);
+	.topBar {
+		display: none;
+	}
+}
+
+body.btMenuHorizontal .mainHeader, body.btMenuHorizontal.btBelowMenu.btStickyHeaderActive .mainHeader {
+	/*box-shadow: 0 0 2px rgba(0,0,0,.11);*/
+	box-shadow: 0 1px 3px rgba(0,0,0,.11);
+}
+
+body.btMenuHorizontal.btBelowMenu .mainHeader {
+	box-shadow: none;
+}
+
+body.btMenuHorizontal.btStickyHeaderActive.btDarkSkin .mainHeader {
+	/*background-color: rgba(0,0,0,0.9);*/
+	background-color: hsla-adjust( $(darkBgColor) 0 0 0 -10 );
+}
+body.btMenuHorizontal.btStickyHeaderActive.btLightSkin .mainHeader {
+	/*background-color: rgba(255,255,255,0.9);*/
+	background-color: hsla-adjust( $(lightBgColor) 0 0 0 -10 );
+}
+
+body.btMenuHorizontal.btStickyHeaderActive.btStickyHeaderOpen .mainHeader {
+	transition: transform 0.5s ease-out-quint;
+	transform: translateY(0);
+}
+
+/* Hide menu */
+
+body.btMenuHorizontal.btHideMenu {
+	.btHorizontalMenuTrigger {
+		display: block;
+	}
+	.menuHolder .menuPort {
+		opacity: 0;
+		transition: opacity 1s ease;
+	}
+	.menuHolder.btShowMenu .menuPort {
+		opacity: 1;
+	}
+}
+
+/* Vertical and responsive menu */
+
+.btVerticalMenuTrigger {
+	display: none;
+	position: relative;
+	z-index: 1;
+	margin: 0 1em 0 -8px;
+	line-height: $(logoHeight)px;
+}
+
+body.btMenuVertical {
+
+	.subToggler {
+		display: block !important;
+		line-height: 45px;
+	}
+
+	> .menuPort {
+
+		text-align: center;
+		/*top: math($(logoHeight) + 2*$(innerVerticalPadding), px);*/
+		top: 0;
+		bottom: 0;
+		position: fixed;
+		width: $(verticalMenuWidth)px;
+		clear: both;
+		transition: transform 1s ease-out-quint;
+		z-index: 101;
+		overflow:hidden;
+		padding: math($(innerVerticalPadding)*2,px) math($(innerHorizontalPadding)*4,px);
+
+		.btMainLogo {
+			display: block !important;
+		}
+		.btAltLogo {
+			display: none !important;
+		}
+		.logo {
+			float: none;
+			padding: 0 0 25px;
+			margin: 0;
+			/*background-color: $(darkBgSubColor);*/
+		}
+
+		.logo img {
+			margin: 0 auto;
+			display: block;
+			height: auto;
+			max-width: 100%;
+		}
+		.btCloseVertical {
+			float: right;
+			margin: -8px -40px 0 0;
+			cursor: pointer;
+		}
+		.btCloseVertical:before {
+			font-family: FontAwesome;
+			content: '\f00d';
+			color: $(accentColor);
+		}
+		nav {
+			margin: 0 -25px;
+			ul {
+				transition: none;
+				li {
+					padding: 0;
+					position: relative;
+					background-color: transparent;
+					a {
+						line-height: 1.1;
+						padding: $(innerHorizontalPadding)px 20px;
+					}
+				}
+				li:not(.current-menu-ancestor) ul {
+					display: none;
+					transition: none;
+				}
+				li.on > ul {
+					/*display: block !important;*/
+				}
+				ul li {
+					padding: 0;
+					opacity: 1;
+					border-bottom: none;
+					background-color: transparent;
+				}
+			}
+		}
+
+
+	}
+
+	.topBar {
+		line-height: 1;
+		padding: $(innerVerticalPadding)px 0 ;
+		height: auto;
+	}
+
+	.btVerticalMenuTrigger {
+		display: block;
+	}
+
+	&.btMenuVerticalOn {
+		position: relative;
+		overflow: hidden;
+		.btPageWrap {
+			position: relative;
+			/*
+			overflow:hidden;
+			height: 100vh;
+			*/
+		}
+	}
+
+	.menuPort:before, .menuPort:after, nav.leftNav:before, nav.leftNav:after {
+		display: none !important;
+	}
+
+}
+
+body.btMenuVertical .menuHolder .logo {
+	transform: none !important;
+}
+
+
+
+.btMenuVerticalRight {
+	> .menuPort {
+		right: 0;
+		box-shadow: -2px 0 5px rgba(0,0,0,.10);
+		transform: translateX(100%);
+	}
+	.btVerticalMenuTrigger {
+		float: right;
+	}
+}
+
+.btMenuVerticalLeft {
+	> .menuPort {
+		left: 0;
+		box-shadow: 2px 0 5px rgba(0,0,0,.10);
+		transform: translateX(-100%);
+	}
+	.btVerticalMenuTrigger {
+		float: left;
+	}
+}
+
+@media (min-width: 1200px) {
+
+	.btMenuVerticalRight {
+		> .menuPort {
+			transform: translateX(0%);
+		}
+	}
+
+	.btMenuVerticalLeft {
+		> .menuPort {
+			transform: translateX(0%);
+		}
+	}
+
+	.btMenuVertical .menuPort, .btMenuVertical.btMenuVerticalOn .menuPort {
+		transform: translate3d(0,0,0);
+	}
+
+	.btMenuVerticalLeft.btHideMenu .menuPort {
+		transform: translate3d(-$(verticalMenuWidth)px,0,0);
+	}
+	.btMenuVerticalRight.btHideMenu .menuPort {
+		transform: translate3d($(verticalMenuWidth)px,0,0);
+	}
+
+	.btMenuVerticalLeft.btHideMenu.btMenuVerticalOn > .menuPort {
+		transform: translate3d(0,0,0);
+	}
+	.btMenuVerticalRight.btHideMenu.btMenuVerticalOn .menuPort {
+		transform: translate3d(0,0,0);
+	}
+
+	.btMenuVertical.btMenuGutter .mainHeader {
+		display: none;
+	}
+
+	.btMenuVertical.btMenuGutter.btHideMenu .mainHeader {
+		display: block;
+	}
+
+	.btMenuVertical.btBelowMenu .btContentWrap {
+		padding: 0 !important;
+	}
+
+	.btMenuVertical .gutter .port,
+	.btMenuVerticalLeftOn.btMenuGutter .mainHeader .topBarPort,
+	.btMenuVerticalRightOn.btMenuGutter .mainHeader .topBarPort {
+		/*max-width: none;*/
+		padding: 0 $(pagePadding)px;
+	}
+
+    .btMenuVerticalOn .btVerticalMenuTrigger .btIco a:before {
+		color: $(accentColor) !important;
+	}
+
+	.btMenuVertical .menuHolder .btVerticalMenuTrigger{
+		display: none;
+	}
+
+	.btMenuVertical:not(.btHideMenu) .menuHolder .logo {
+		display: none;
+	}
+
+	.btMenuVertical.btHideMenu .menuHolder .btVerticalMenuTrigger {
+		display: block;
+	}
+
+	.btMenuVerticalLeft .btPageWrap, .btMenuVerticalLeft.btMenuVerticalOn .btPageWrap {
+		transform: translate3d(0,0,0);
+		margin: 0 0 0 $(verticalMenuWidth)px;
+	}
+
+	.btMenuVerticalRight .btPageWrap, .btMenuVerticalRight.btMenuVerticalOn .btPageWrap {
+		transform: translate3d(0,0,0);
+		margin: 0 $(verticalMenuWidth)px 0 0;
+	}
+
+	:any(.btMenuVerticalRight, .btMenuVerticalLeft).btHideMenu .btPageWrap {
+		transform: translate3d(0,0,0);
+		margin: 0;
+	}
+
+	.btMenuVerticalLeft.btMenuVerticalOn.btHideMenu .btPageWrap {
+		transform: translate3d($(verticalMenuWidth)px,0,0);
+		margin: 0;
+	}
+
+	.btMenuVerticalRight.btMenuVerticalOn.btHideMenu .btPageWrap {
+		transform: translate3d(-$(verticalMenuWidth)px,0,0);
+		margin: 0;
+	}
+
+}
+
+.btMenuVerticalOn .menuPort {
+	transform: translateX(0);
+	transition: transform 1s ease-out-quint;
+}
+
+.btMenuVerticalLeft.btMenuVerticalOn .btPageWrap {
+	transform: translateX($(verticalMenuWidth)px);
+}
+
+.btMenuVerticalRight.btMenuVerticalOn .btPageWrap {
+	transform: translateX(-$(verticalMenuWidth)px);
+}
+
+.btMenuVertical.btDarkSkin .menuPort {
+	background-color: $(darkBgColor);
+}
+
+.btMenuVertical.btLightSkin  .menuPort {
+	background-color: $(lightBgColor);
+}
+
+/* Header elements layout */
+
+.btTopToolsRight {
+	float: right;
+}
+
+.btTopToolsLeft {
+	float: left;
+}
+
+.btMenuVertical {
+
+	.btTopToolsRight, .btTopToolsLeft {
+		max-width: none;
+		float: none;
+	}
+
+	.topBar {
+		padding: 0;
+	}
+
+	:any(.topBarPort .btTopToolsLeft, .topBarPort .btTopToolsRight) span.btIco {
+		margin: 0 5px;
+	}
+
+    .topTools {
+        position: relative;
+        padding: 10px 0px 0;
+    }
+
+	.topTools.btTopToolsRight {
+		text-align: inherit;
+	}
+
+}
+
+/* Top bar search */
+
+:any(.topBar, .topBarInMenu) .widget_search {
+	display: inline-block;
+	.btMenuVertical & {
+		display: block;
+		padding: 0 0 0 15px;
+	}
+	h2 {
+		display: none;
+	}
+	.btSearch {
+		position: relative;
+		padding: 4px 15px;
+	}
+	input[type="text"], input[type="text"]:hover, input[type="text"]:focus {
+		border: none;
+		font-size: 11px;
+		line-height: initial;
+		height: 14px;
+		padding: 0;
+		background-color: transparent;
+		box-shadow: none;
+		transform: none;
+		transition: none;
+		margin: 0px;
+		backface-visibility: hidden;
+	}
+	.btMenuCenter & input[type="text"] {
+		width: 90px;
+	}
+	button {
+		display: block;
+		position: absolute;
+		right: 0em;
+		top: 50%;
+		transform: translateY(-50%);
+		margin: 0;
+		border: none;
+		z-index: 2;
+		cursor: pointer;
+		font-size: 16px;
+		background: transparent;
+	}
+	button:before {
+		font-family: FontAwesome;
+		content: "\f002";
+		display: inline-block;
+		color: #444;
+		transition: all 400ms ease;
+	}
+	button:hover:before {
+		color: $(accentColor);
+		transition: all 400ms ease;
+	}
+/*	.btSearch:after {
+		position: relative;
+		clear: both;
+		content: "";
+		display: block;
+		width: 100%;
+		height: 1px;
+		background: red;
+	}*/
+	.btSearchInnerClose {
+		display: none;
+	}
+	form {
+		height: auto;
+		line-height: 1;
+		padding-right: 21px;
+	}
+}
+:darkSkinSelector :any(.topBar, .topBarInMenu) .widget_search {
+	button:before {
+		color: a-adjust($(darkFontColor) -50);
+	}
+	button:hover:before {
+		color: $(accentColor);
+	}
+}
+:lightSkinSelector {
+	button:before {
+		color: a-adjust($(lightFontColor) -50);
+	}
+	button:hover:before {
+		color: $(accentColor);
+	}
+}
+
+.btMenuVertical .topBarInMenu .widget_search {
+	margin: 0 -30px 28px;
+}
+
+.btMenuVertical .topBar .widget_search {
+	margin: 0 0 28px;
+}
+
+:lightSkinSelector.btMenuVertical :any(.topBar,.topBarInMenu) .widget_search {
+	background-color: $(lightBgSubColor);
+}
+
+:darkSkinSelector.btMenuVertical :any(.topBar,.topBarInMenu) .widget_search {
+	background-color: $(darkBgSubColor);
+}
+
+.topBarInMenu .widget_search {
+	/*line-height: 43px;*/
+	margin: 0 5px 0 0;
+	float: left;
+}
+
+.btMenuVertical :any(.topBar,.topBarInMenu) .widget_search {
+	line-height: 32px;
+	margin: 0;
+}
+
+.topBarInMenu .widget_search .btSearchInner {
+	/*margin: 13px 0 0;*/
+}
+
+.btTopToolsRight .widget_search .btSearch .btIco .btIcoHolder, .topBarInMenu .widget_search .btSearch .btIco .btIcoHolder {
+	line-height: 21px;
+}
+.btMenuVertical .topBarInMenu .widget_search .btSearch .btIco .btIcoHolder {
+	line-height: 16px;
+}
+
+:darkSkinSelector :any(.topBar,.topBarInMenu) .widget_search form input[type="text"] {
+	background: transparent;
+}
+
+.btMenuVertical :any(.topBar,.topBarInMenu) .widget_search .btSearchInner {
+	margin: 0;
+}
+
+.btMenuVertical :any(.topBar,.topBarInMenu) .widget_search input[type="text"] {
+	width: 190px;
+	display: block;
+}
+
+.btMenuVertical .topBarInMenu .btSearch .btIco, .btMenuVertical .topTools.btTextRight .btSearch .btIco {
+	margin: 0 -20px 0 0;
+}
+
+.btTopToolsSearchOpen .btSearchInner.btFromTopBox {
+	transform: translateY(0);
+	transition: all 300ms ease;
+	box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+}
+
+/* iScroll */
+
+:darkSkinSelector .iScrollIndicator {
+	background-color: rgba(255, 255, 255, 0.05) !important;
+	border: 1px solid rgba(255, 255, 255, 0.1) !important;
+}
+
+/* Prevent horizontal scroll on small screens when menu is open */
+
+/* body.btMenuVerticalOn {
+	position: relative;
+	width: 100vw;
+	height: 100vh;
+	overflow: hidden;
+} */
+
+/* IE10 Menu Fix */
+
+html[data-useragent*='MSIE 10.0'] {
+
+	body.btMenuHorizontal .menuPort ul > li > ul {
+		opacity: 1;
+		pointer-events: auto;
+		display: none;
+	}
+
+	body.btMenuHorizontal .menuPort ul > li:hover > ul {
+		display: block;
+	}
+
+	body.btMenuHorizontal .menuPort ul > li:hover > ul > li > ul {
+		display: none;
+	}
+
+	body.btMenuHorizontal .menuPort ul > li:hover > ul > li:hover > ul {
+		display: block;
+	}
+
+	body.btMenuHorizontal .menuPort ul > li:hover > ul > li:hover > ul > li > ul {
+		display: none;
+	}
+
+	body.btMenuHorizontal .menuPort ul > li:hover > ul > li:hover > ul > li:hover > ul {
+		display: block;
+	}
+
+}
+
+/* Search box */
+
+
+.btMenuHorizontal .mainHeader {
+	.btSearch:before {
+		content: ' ';
+		display: block;
+		position: absolute;
+		top: 0;
+		left: 0;
+		right: 0;
+		bottom: 0;
+		pointer-events: none;
+		z-index: initial;
+	}
+	.btSearchInner {
+		position: relative;
+		z-index: 2;
+	}
+}
+
+.btMenuHorizontal .topBar .btSearch:before {
+	margin: -11px 0 -11px;
+}
+
+.btMenuHorizontal.btMenuBelowLogo .topBarInMenu .btSearch:before {
+	margin: -15px 0 -17px;
+}
+
+.btMenuHorizontal:lightSkinSelector .btSearch:before {
+	border-left: 1px solid $(lightBorderColor);
+	border-right: 1px solid $(lightBorderColor);
+}
+
+.btMenuHorizontal:darkSkinSelector .btSearch:before {
+	border-left: 1px solid $(darkBorderColor);
+	border-right: 1px solid $(darkBorderColor);
+}
+
+.btMenuVertical:lightSkinSelector, .btMenuVertical:darkSkinSelector {
+	.menuPort .btSearch:before {
+		border: none;
+		padding: 0;
+	}
+}
+
+/* Header Tools */
+.topBarInLogoArea {
+	float: right;
+}
+
+.topBarInLogoAreaCell {
+	border: 0px solid $(accentColor);
+	display: none;
+}
+
+.topBarInLogoAreaCell .btIconWidget {
+	display: table;
+}
+
+.topBarInLogoAreaCell .btIconWidget {
+	float: left;
+	margin: 0 0 0 35px;
+}
+
+.topBarInLogoAreaCell .btIconWidgetIcon, .topBarInLogoAreaCell .btIconWidgetContent {
+	display: table-cell;
+	vertical-align: middle;
+}
+
+.topBarInLogoAreaCell .btIconWidgetIcon {
+	text-align: left;
+	width: 50px;
+}
+
+.topBarInLogoAreaCell .btIconWidgetIcon .btIco {
+	margin: 0;
+}
+
+.topBarInLogoAreaCell .btIconWidgetIcon {
+	line-height: 1;
+	padding: 0 0.35em 0 0;
+}
+
+.topBarInLogoAreaCell .btIconWidgetIcon em {
+	width: 60px;
+	height: 60px;
+
+}
+.topBarInLogoAreaCell .btIconWidgetIcon .btIcoHolder:before, .topBarInLogoAreaCell .btIconWidgetIcon .btIcoHolder:after {
+	font-size: 50px;
+	line-height: 60px;
+}
+
+.btIconWidgetTitle, .btIconWidgetText {
+	display: block;
+	line-height: 1.3;
+}
+
+.topTools :any(.btIconWidgetTitle, .btIconWidgetText) {
+	display: inline-block;
+	font-size: 10px;
+	font-weight: 400;
+	line-height: 1.1;
+	text-transform: uppercase;
+}
+
+:lightSkinSelector .topTools :any(.btIconWidgetTitle, .btIconWidgetText) {
+	color: $(lightFontColor);
+}
+
+:darkSkinSelector .topTools :any(.btIconWidgetTitle, .btIconWidgetText) {
+	color: $(darkFontColor);
+}
+
+.topTools .btIconWidgetTitle {
+	opacity: 0.7;
+}
+
+.topTools.btTopToolsLeft .btIconWidgetTitle {
+	margin: 0 0.5em 0 0;
+}
+
+.btIconWidgetTitle {
+	font-size: 14px;
+	margin: 0 0 3px;
+}
+
+.btIconWidgetText {
+	color: a-adjust( $(lightFontColor) -60 );
+}
+
+:darkSkinSelector .btIconWidgetText {
+	color: a-adjust( $(darkFontColor) -30 );
+}
+
+:any(.topTools,.menuPort) .btIconWidget, .topTools.btTextRight .btIconWidget {
+	margin: 0 0 0 0.4em;
+	line-height: 20px;
+}
+
+/*.topBarInMenuCell .btIconWidget {
+	margin: 10px 0 0 0.4em;
+}*/
+
+:any(.topTools,.menuPort) .btIconWidget em, .fooWidgets .btIconWidget em {
+	width: 20px;
+	height: 20px;
+}
+
+:any(.topTools,.menuPort) .btIconWidget :any(.btIcoHolder:before,.btIcoHolder:after),
+.fooWidgets .btIconWidget :any(.btIcoHolder:before,.btIcoHolder:after) {
+	font-size: 14px;
+}
+
+
+.fooWidgets {
+	line-height: 1.2;
+}
+
+.topBarInMenu .btSearch .btIco, .topTools.btTextRight .btSearch .btIco {
+	margin: 0;
+}
+
+.topTools.btTopToolsLeft .btIco .btIcoHolder {
+	width: 24px;
+	height: 24px;
+	display: inline-block;
+	float: none;
+	border-radius: 50%;
+	vertical-align: -25%;
+	padding: 0;
+	margin: 0;
+	line-height: 24px;
+	text-align: center;
+	position: relative;
+	overflow:  hidden;
+}
+
+.topTools.btTopToolsLeft .btIco .btIcoHolder {
+	background-color: $(accentColor);
+}
+
+.topTools.btTopToolsLeft .btIco .btIcoHolder:hover {
+	background-color: $(alterColor);
+}
+
+.topTools.btTopToolsLeft .btSpecialHeaderIcon .btIco .btIcoHolder {
+	background-color: $(alterColor);
+}
+
+.topTools.btTopToolsLeft .btSpecialHeaderIcon .btIco .btIcoHolder:hover {
+	background-color: $(accentColor);
+}
+
+:any(:lightSkinSelector,:darkSkinSelector) :any(.topTools.btTopToolsLeft .btIco .btIcoHolder:after,.topTools.btTopToolsLeft .btIco .btIcoHolder em) {
+	color: #fff !important;
+}
+
+
+.topTools .btIco .btIcoHolder em {
+	line-height: 1;
+	float: none;
+	vertical-align: middle;
+	text-align: center;
+	color: #fff;
+}
+
+.topTools .btIconWidget {
+	display: inline-block;
+}
+
+.topTools.btTopToolsLeft .btIconWidget {
+	margin: 0 1.2em 0 0;
+}
+
+.btMenuVertical .topBar .topTools.btTopToolsLeft .btIconWidget {
+	padding: 0;
+	margin: 0 0 12px;
+	display: block;
+	clear: left;
+}
+
+.btMenuVertical .topBar :any(.topTools.btTopToolsLeft,.topTools.btTopToolsRight) .btIconWidgetIcon {
+	display: block;
+	margin: 0 auto 6px;
+	text-align: center;
+}
+
+.btMenuVertical .topBar :any(.topTools.btTopToolsLeft,.topTools.btTopToolsRight) span.btIconWidget .btIconWidgetContent {
+	float: none;
+	display: block;
+	margin: 0;
+	text-align: center;
+	clear: both;
+}
+
+.btMenuVertical .topTools :any(.btIconWidgetTitle, .btIconWidgetText) {
+	display: block;
+	text-align: center;
+	margin: 0 0 4px;
+}
+
+.btMenuVertical {
+	.widget_search form {
+		height: 44px;
+		line-height: 44px;
+		padding-right: 44px;
+	}
+	
+	.widget_search input[type="text"] {
+		display: inline-block !important;
+	}
+	
+	.widget_search button {
+		right: 10px;
+		width: 40px;
+	}
+}
+
+/* Info Toggler */
+
+.infoToggler {
+	display: block;
+	position: relative;
+	width: 72px;
+	cursor: pointer;
+}
+
+.infoToggler:before, .infoToggler:after {
+	display: block;
+	float: left;
+	vertical-align: middle;
+	text-align: center;
+	width: 36px;
+	height: 36px;
+}
+
+.infoToggler:before {
+	background-color: $(accentColor);
+	color: #fff;
+	content: '\e928';
+	border: 1px solid $(accentColor);
+	font: normal 20px/34px btmedical;
+}
+
+.infoToggler:after {
+	font: normal 32px/34px Icon7Stroke;
+	content: '\e688';
+	vertical-align: middle;
+	text-align: center;
+	color: $(accentColor);
+	border: 1px solid $(accentColor);
+}
+
+.infoToggler.on:after {
+	content: '\e682';
+	background-color: $(accentColor);
+	color: #fff;
+}
+
+.infoToggler.on:before {
+	background-color: transparent;
+	color: $(accentColor);
+}
+
+@media (min-width: 993px) {
+	.infoToggler {
+		display: none;
+	}
+}

@@ -1,0 +1,317 @@
+/* Base font */
+
+html, body {
+    min-height: 100vh;
+}
+
+html {
+	overflow-x: hidden;
+}
+
+body {
+    font-family: $(bodyFont);
+    font-size: $(bodyFontSize)px;
+	font-weight: 400;
+    line-height: 1.7;
+	background-size: cover;
+	background-attachment: fixed;
+}
+
+.small, small {
+	font-size: math($(bodyFontSize)-2, px);
+}
+
+/* Headings */
+
+h1, h2, h3, h4, h5, h6 {
+    clear: both;
+	font-family: $(headingFont);
+	margin: 0 0 $(innerVerticalPadding)px 0;
+    line-height: 1.5;
+    padding: 0;
+}
+
+
+h1, h2, h3 {
+	letter-spacing: 2px;
+	font-weight: 700;
+}
+
+h1 {
+    font-size: 64px;
+	line-height: math( this( font-size ) + 10 )px;
+}
+
+h2 {
+    font-size: 40px;
+	line-height: math( this( font-size ) + 10 )px;
+}	
+
+h3 {
+    font-size: 21px;
+    letter-spacing: 0px;
+	line-height: math( this( font-size ) + 10 )px;
+}
+
+h4, h5, h6 {
+    font-size: 16px;
+	letter-spacing: 0px;
+    font-weight: 600;
+	line-height: math( this( font-size ) + 10 )px;
+}
+
+h5 {
+    font-size: 15px;
+	line-height: math( this( font-size ) + 10 )px;
+}
+
+h6 {
+    font-size: 14px;
+	line-height: math( this( font-size ) + 10 )px;
+}
+
+/* Skin */
+
+:darkSkinSelector {
+    color: $(darkFontColor);
+    background-color: $(darkBgColor);
+}
+
+:lightSkinSelector {
+    color: $(lightFontColor);
+    background-color: $(lightBgColor);
+}
+
+:lightSkinSelector :any(h1, h2, h3, h4, h5, h6) {
+	color: $(lightHeadlineColor);
+}
+
+:darkSkinSelector :any(h1, h2, h3, h4, h5, h6) {
+	color: $(darkHeadlineColor);
+}
+
+a {
+	transition: color 300ms ease;
+}
+
+:lightSkinSelector a {
+	color: $(lightFontColor);
+}
+
+:darkSkinSelector a {
+	color: $(darkFontColor);
+}
+
+a:hover {
+	color: $(accentColor);
+}
+
+/* Base formating */
+
+.btContentHolder :any( figure, img, select, embed, iframe ) {
+    max-width: 100%;
+    height: auto;
+}
+
+.btContentHolder .btGoogleMap :any( figure, img, select ) {
+	max-width: none;
+}
+
+.btContentHolder pre code {
+    display: block;
+}
+
+.btContentHolder pre {
+    overflow: hidden;
+}
+
+/* Loader */
+
+.btLoader {
+  margin: 30px auto 30px auto;
+  font-size: 6px;
+  position: relative;
+  text-indent: -9999em;
+  border: 5px solid rgba(128, 128, 128, 0.1);
+  border-right: 5px solid rgba(128, 128, 128, 0.3);
+  animation: btLoader 1.1s infinite linear;
+}
+ 
+.btLoader,
+.btLoader:after {
+  border-radius: 50%;
+  width: 64px;
+  height: 64px;
+}
+
+@keyframes btLoader {
+  0% {
+	transform: rotate(0deg);
+  }
+  100% {
+	transform: rotate(359deg);
+  }
+}
+
+/* Template base */
+
+.btPageWrap {
+    position: relative;
+    overflow: hidden;
+	/*min-height: 101vh;
+	background-color: inherit;*/
+	transition: transform 1s ease-out-quint;
+}
+ 
+/* Z indexes */
+
+.mainHeader {
+	z-index: 1001;
+}
+
+.btGhost {
+	z-index: 1002;
+}
+
+.btPreloader {
+	z-index: 10000;
+}
+
+/* Content holder and sidebars*/
+
+.btNoSidebar .btContentHolder, .btNoSidebar .btContent {
+    width: auto;
+	padding: 0;
+}
+
+.btWithSidebar  .btContentHolder {
+    max-width: math(1200 - 2*$(pagePadding), px);
+    margin: auto;
+    /*padding-top: $(innerVerticalPadding)px;*/
+}
+
+.btContent {
+    width: math(100 - $(sidebarWidth))%;
+}
+
+.btSidebar {
+	width: $(sidebarWidth)%;
+	padding-bottom: $(innerVerticalPadding)px;
+}
+
+.btSidebarLeft .btSidebar {
+	float: left;
+	padding-right: $(sidebarPadding);
+}
+
+.btSidebarRight .btSidebar {
+	float: right;
+	padding-left: $(sidebarPadding);
+}
+
+.btSidebarRight .btContent {
+	float: left;
+}
+
+.btSidebarLeft .btContent {
+	float: right;
+}
+
+/* Preloader */
+
+.btPreloader {
+	position: fixed;
+	top: 0;
+	left: 0;
+	background-color: inherit;
+	width: 100%;
+    vertical-align: middle;
+    text-align: center;
+	transform: translateY(0px);
+	opacity: 1;
+	transition: all 0.3s ease, opacity 0.3s ease;
+	z-index: 999999;
+	.animation {
+		position: absolute;
+		display: block;
+		width: 100%;
+		transform: translateY(100px) scale(1);
+		transition: transform 0.3s ease, opacity 0.3s ease;
+	}
+}
+
+.btPreloader.removePreloader {
+    transform: translateY(-100%);
+	opacity: 0;
+    transition: transform 0.2s ease 1s, opacity 0.5s ease 0.5s;
+	.animation {
+		transform: translateY(36px) scale(1);
+		opacity: 0;
+		transition: transform 0.5s ease, opacity 0.5s ease 0.5s;
+	}
+}
+
+.btPreloader .animation .preloaderLogo {
+    height: $(logoHeight)px;
+    transform: scale(1);
+    transition: all 0.5s ease;
+	width: auto;
+}
+
+:any(.btMenuVerticalRightEnabled, .btMenuVerticalLeftEnabled) .btPreloader .animation .preloaderLogo {
+    height: math($(logoHeight)*2, px);
+}
+
+/* Bradcrumbs */
+
+.btBreadCrumbs {
+	ul {
+		margin-left: 0;
+		padding-left: 0;
+	}
+	li {
+		display: inline-block;
+		margin-left: 0;
+		padding-left: 0; 
+		padding-right: 5px;
+	}
+	li:after {
+		content: " / ";
+	}
+}
+
+/* Page headline */
+
+.btPageHeadline {
+	margin: 0 0 math(2*$(innerVerticalPadding),px) 0;
+}
+
+
+/* Accent color background helper class */
+
+.btAccentColorBackground {
+    background-color: $(accentColor) !important;
+}
+
+.btAleternateColorBackground {
+    background-color: $(alterColor) !important;
+}
+
+
+:lightSkinSelector .btDefaultColorBackground {
+    background-color: $(lightBgSubColor) !important;
+}
+
+:darkSkinSelector .btDefaultColorBackground {
+    background-color: $(darkBgSubColor) !important;
+}
+
+/* Text meant only for screen readers. */
+.screen-reader-text {
+	clip: rect(1px, 1px, 1px, 1px);
+	position: absolute !important;
+	height: 1px;
+	width: 1px;
+	overflow: hidden;
+}
+

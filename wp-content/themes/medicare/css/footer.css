@@ -1,0 +1,87 @@
+/* Footer widgets */
+
+
+
+/* Footer copyright */
+
+.btSiteFooter  {
+	padding: 15px 0;
+	line-height: 1.2;
+	.port {
+		max-width: math(1200 - 2*$(pagePadding), px);;
+		margin: auto;
+	}
+	.copyLine {
+		margin-bottom: 0;
+	}
+	.menu {
+		margin: 2px 0 0 0;
+		padding: 0;
+		list-style: none;
+		text-align: right;
+		li {
+			display: inline-block;
+			margin: 0 11px;
+			padding: 0;
+			font-size: 11px;
+			text-transform: uppercase;
+		}
+		a:hover {
+			color: $(accentColor);
+		}
+	}
+}
+
+
+
+.btSiteFooter .btTextRight .btIco {
+	margin: 0 0 0 14px;
+}
+
+.btSiteFooter .btTextLeft .btIco {
+	margin: 0 14px 0 0;
+}
+
+.fooWidgets .btSearch {
+	display: none;
+}
+
+.btFooterMenu {
+	ul.menu, .fooWidgets {
+		display: block;
+		float: right;
+	}
+	ul.menu li:first-child {
+		margin-left: 0;
+	}
+}
+.btSiteFooterWidgets .widget_bt_text_image .btImage img {
+	margin: 0;
+}
+
+:lightSkinSelector {
+	.btSiteFooterWidgets  {
+		/*border-top: 1px solid $(lightBorderColor);*/
+		background: $(lightBgSubColor);
+	}
+	.btSiteFooter  {
+		/*border-top: 1px solid $(lightBorderColor);*/
+		background: $(lightBgColor);		
+	}
+}
+
+:darkSkinSelector {
+	.btSiteFooterWidgets  {
+		/*border-top: 1px solid $(darkBorderColor);*/
+		background: $(darkBgColor);	
+	}
+	.btSiteFooter  {
+		/*border-top: 1px solid $(darkBorderColor);*/
+		background: $(darkBgSubColor);
+	}
+}
+
+.btFooterWrap.btDarkSkin .btBox h4 .headline a:hover, 
+.btFooterWrap.btLightSkin .btBox h4 .headline a:hover {
+	color: $(accentColor);
+}
